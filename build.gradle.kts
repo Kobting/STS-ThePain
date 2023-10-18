@@ -3,8 +3,8 @@ import java.util.*
 
 plugins {
     kotlin("jvm") version "1.7.20"
-    id("com.github.kobting")
     id("com.google.devtools.ksp")
+    id("sts-dependencies.dependencies")
 }
 
 group = "com.github.kobting"
@@ -43,15 +43,15 @@ ksp {
 }
 
 dependencies {
-    implementation(project.ext.get("SlayTheSpire")!!)
-    implementation(project.ext.get("ModTheSpire")!!)
-    implementation(project.ext.get("BaseMod")!!)
+    implementation(SlayTheSpire)
+    implementation(ModTheSpire)
+    implementation(BaseMod)
     implementation("com.github.kobting.sts-annotations:annotations:0.8.0")
 
     ksp("com.github.kobting.sts-annotations:processors:0.8.0")
-    ksp(project.ext.get("SlayTheSpire")!!)
-    ksp(project.ext.get("ModTheSpire")!!)
-    ksp(project.ext.get("BaseMod")!!)
+    ksp(SlayTheSpire)
+    ksp(ModTheSpire)
+    ksp(BaseMod)
 }
 
 kotlin {
